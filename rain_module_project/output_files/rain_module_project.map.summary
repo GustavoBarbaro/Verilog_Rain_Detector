@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Aug 01 23:02:35 2022
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : rain_module_project
+Top-level Entity Name : rain_module_project
+Family : Cyclone IV E
+Total logic elements : 274
+    Total combinational functions : 272
+    Dedicated logic registers : 109
+Total registers : 109
+Total pins : 29
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

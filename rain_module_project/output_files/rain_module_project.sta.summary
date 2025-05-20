@@ -1,0 +1,173 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : -4.874
+TNS   : -67.880
+
+Type  : Slow 1200mV 85C Model Setup 'clk_50MHz'
+Slack : -3.674
+TNS   : -190.507
+
+Type  : Slow 1200mV 85C Model Setup 'sinais_da_entrada[0]'
+Slack : -1.358
+TNS   : -1.358
+
+Type  : Slow 1200mV 85C Model Hold 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : 0.405
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_50MHz'
+Slack : 0.405
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'sinais_da_entrada[0]'
+Slack : 0.882
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'clk_50MHz'
+Slack : -1.087
+TNS   : -15.884
+
+Type  : Slow 1200mV 85C Model Recovery 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : -0.155
+TNS   : -2.015
+
+Type  : Slow 1200mV 85C Model Removal 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : 0.491
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'clk_50MHz'
+Slack : 0.807
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50MHz'
+Slack : -3.000
+TNS   : -94.235
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sinais_da_entrada[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : -1.285
+TNS   : -48.830
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Unidade_de_Controle:UC|flag_ler'
+Slack : 0.464
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : -4.374
+TNS   : -59.516
+
+Type  : Slow 1200mV 0C Model Setup 'clk_50MHz'
+Slack : -3.337
+TNS   : -168.719
+
+Type  : Slow 1200mV 0C Model Setup 'sinais_da_entrada[0]'
+Slack : -1.135
+TNS   : -1.135
+
+Type  : Slow 1200mV 0C Model Hold 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_50MHz'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'sinais_da_entrada[0]'
+Slack : 0.763
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'clk_50MHz'
+Slack : -0.875
+TNS   : -11.951
+
+Type  : Slow 1200mV 0C Model Recovery 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : -0.055
+TNS   : -0.715
+
+Type  : Slow 1200mV 0C Model Removal 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : 0.447
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'clk_50MHz'
+Slack : 0.743
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50MHz'
+Slack : -3.000
+TNS   : -94.235
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sinais_da_entrada[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : -1.285
+TNS   : -48.830
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Unidade_de_Controle:UC|flag_ler'
+Slack : 0.469
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : -1.898
+TNS   : -17.486
+
+Type  : Fast 1200mV 0C Model Setup 'clk_50MHz'
+Slack : -1.336
+TNS   : -60.004
+
+Type  : Fast 1200mV 0C Model Setup 'sinais_da_entrada[0]'
+Slack : -0.844
+TNS   : -0.844
+
+Type  : Fast 1200mV 0C Model Hold 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_50MHz'
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'sinais_da_entrada[0]'
+Slack : 0.414
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'clk_50MHz'
+Slack : -0.070
+TNS   : -0.490
+
+Type  : Fast 1200mV 0C Model Recovery 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : 0.360
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : 0.207
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'clk_50MHz'
+Slack : 0.381
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50MHz'
+Slack : -3.000
+TNS   : -78.518
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sinais_da_entrada[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Print_Display_LCD:P1|LCD_Display:u1|CLK_400HZ'
+Slack : -1.000
+TNS   : -38.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Unidade_de_Controle:UC|flag_ler'
+Slack : 0.473
+TNS   : 0.000
+
+------------------------------------------------------------

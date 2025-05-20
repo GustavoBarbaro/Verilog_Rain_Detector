@@ -1,0 +1,92 @@
+Restore Archived Project report for rain_module_project
+Mon Aug 01 23:01:27 2022
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Mon Aug 01 23:01:27 2022 ;
+; Revision Name                   ; rain_module_project                   ;
+; Top-level Entity Name           ; rain_module_project                   ;
+; Family                          ; Cyclone IV E                          ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored 'C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA.qar' into the 'C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/' directory
+Info: Generated report 'rain_module_project.restore.rpt'
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/17.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4816 megabytes
+    Info: Processing ended: Mon Aug 01 23:01:27 2022
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++---------------------------------------------+
+; Files Restored                              ;
++---------------------------------------------+
+; File Name                                   ;
++---------------------------------------------+
+; qar_info.json                               ;
+; Buffer_Sensor.v                             ;
+; Divisor_Frequencia.v                        ;
+; LCD_Display.v                               ;
+; Memoria_Mensagem.v                          ;
+; Modulo_Bluetooth.v                          ;
+; Print_Display_LCD.v                         ;
+; Reset_Delay.v                               ;
+; UART_BaudRate_generator.v                   ;
+; UART_rs232_tx.v                             ;
+; Unidade_de_Controle.v                       ;
+; assignment_defaults.qdf                     ;
+; display_7_seg.v                             ;
+; rain_module_project.qpf                     ;
+; rain_module_project.qsf                     ;
+; rain_module_project.v                       ;
+; rain_module_project_Teste.vwf               ;
+; rain_module_project_assignment_defaults.qdf ;
+; uart_tx.v                                   ;
++---------------------------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+

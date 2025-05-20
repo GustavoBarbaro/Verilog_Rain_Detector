@@ -1,0 +1,574 @@
+Analysis & Synthesis report for rain_module_project
+Mon Aug 01 23:02:35 2022
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |rain_module_project|Print_Display_LCD:P1|LCD_Display:u1|next_command
+  9. State Machine - |rain_module_project|Print_Display_LCD:P1|LCD_Display:u1|state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Print_Display_LCD:P1|LCD_Display:u1
+ 15. Parameter Settings for User Entity Instance: uart_tx:B22
+ 16. Port Connectivity Checks: "display_7_seg:comb_9"
+ 17. Port Connectivity Checks: "uart_tx:B22"
+ 18. Port Connectivity Checks: "Print_Display_LCD:P1"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Aug 01 23:02:35 2022       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; rain_module_project                         ;
+; Top-level Entity Name              ; rain_module_project                         ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 274                                         ;
+;     Total combinational functions  ; 272                                         ;
+;     Dedicated logic registers      ; 109                                         ;
+; Total registers                    ; 109                                         ;
+; Total pins                         ; 29                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                          ;
++----------------------------------------------------------------------------+---------------------+---------------------+
+; Option                                                                     ; Setting             ; Default Value       ;
++----------------------------------------------------------------------------+---------------------+---------------------+
+; Device                                                                     ; EP4CE115F29C7       ;                     ;
+; Top-level entity name                                                      ; rain_module_project ; rain_module_project ;
+; Family name                                                                ; Cyclone IV E        ; Cyclone V           ;
+; Use smart compilation                                                      ; Off                 ; Off                 ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                  ; On                  ;
+; Enable compact report table                                                ; Off                 ; Off                 ;
+; Restructure Multiplexers                                                   ; Auto                ; Auto                ;
+; Create Debugging Nodes for IP Cores                                        ; Off                 ; Off                 ;
+; Preserve fewer node names                                                  ; On                  ; On                  ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable              ; Enable              ;
+; Verilog Version                                                            ; Verilog_2001        ; Verilog_2001        ;
+; VHDL Version                                                               ; VHDL_1993           ; VHDL_1993           ;
+; State Machine Processing                                                   ; Auto                ; Auto                ;
+; Safe State Machine                                                         ; Off                 ; Off                 ;
+; Extract Verilog State Machines                                             ; On                  ; On                  ;
+; Extract VHDL State Machines                                                ; On                  ; On                  ;
+; Ignore Verilog initial constructs                                          ; Off                 ; Off                 ;
+; Iteration limit for constant Verilog loops                                 ; 5000                ; 5000                ;
+; Iteration limit for non-constant Verilog loops                             ; 250                 ; 250                 ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                  ; On                  ;
+; Infer RAMs from Raw Logic                                                  ; On                  ; On                  ;
+; Parallel Synthesis                                                         ; On                  ; On                  ;
+; DSP Block Balancing                                                        ; Auto                ; Auto                ;
+; NOT Gate Push-Back                                                         ; On                  ; On                  ;
+; Power-Up Don't Care                                                        ; On                  ; On                  ;
+; Remove Redundant Logic Cells                                               ; Off                 ; Off                 ;
+; Remove Duplicate Registers                                                 ; On                  ; On                  ;
+; Ignore CARRY Buffers                                                       ; Off                 ; Off                 ;
+; Ignore CASCADE Buffers                                                     ; Off                 ; Off                 ;
+; Ignore GLOBAL Buffers                                                      ; Off                 ; Off                 ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                 ; Off                 ;
+; Ignore LCELL Buffers                                                       ; Off                 ; Off                 ;
+; Ignore SOFT Buffers                                                        ; On                  ; On                  ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                 ; Off                 ;
+; Optimization Technique                                                     ; Balanced            ; Balanced            ;
+; Carry Chain Length                                                         ; 70                  ; 70                  ;
+; Auto Carry Chains                                                          ; On                  ; On                  ;
+; Auto Open-Drain Pins                                                       ; On                  ; On                  ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                 ; Off                 ;
+; Auto ROM Replacement                                                       ; On                  ; On                  ;
+; Auto RAM Replacement                                                       ; On                  ; On                  ;
+; Auto DSP Block Replacement                                                 ; On                  ; On                  ;
+; Auto Shift Register Replacement                                            ; Auto                ; Auto                ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                ; Auto                ;
+; Auto Clock Enable Replacement                                              ; On                  ; On                  ;
+; Strict RAM Replacement                                                     ; Off                 ; Off                 ;
+; Allow Synchronous Control Signals                                          ; On                  ; On                  ;
+; Force Use of Synchronous Clear Signals                                     ; Off                 ; Off                 ;
+; Auto RAM Block Balancing                                                   ; On                  ; On                  ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                 ; Off                 ;
+; Auto Resource Sharing                                                      ; Off                 ; Off                 ;
+; Allow Any RAM Size For Recognition                                         ; Off                 ; Off                 ;
+; Allow Any ROM Size For Recognition                                         ; Off                 ; Off                 ;
+; Allow Any Shift Register Size For Recognition                              ; Off                 ; Off                 ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                  ; On                  ;
+; Ignore translate_off and synthesis_off directives                          ; Off                 ; Off                 ;
+; Timing-Driven Synthesis                                                    ; On                  ; On                  ;
+; Report Parameter Settings                                                  ; On                  ; On                  ;
+; Report Source Assignments                                                  ; On                  ; On                  ;
+; Report Connectivity Checks                                                 ; On                  ; On                  ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                 ; Off                 ;
+; Synchronization Register Chain Length                                      ; 2                   ; 2                   ;
+; Power Optimization During Synthesis                                        ; Normal compilation  ; Normal compilation  ;
+; HDL message level                                                          ; Level2              ; Level2              ;
+; Suppress Register Optimization Related Messages                            ; Off                 ; Off                 ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                ; 5000                ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                ; 5000                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                 ; 100                 ;
+; Clock MUX Protection                                                       ; On                  ; On                  ;
+; Auto Gated Clock Conversion                                                ; Off                 ; Off                 ;
+; Block Design Naming                                                        ; Auto                ; Auto                ;
+; SDC constraint protection                                                  ; Off                 ; Off                 ;
+; Synthesis Effort                                                           ; Auto                ; Auto                ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                  ; On                  ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                 ; Off                 ;
+; Analysis & Synthesis Message Level                                         ; Medium              ; Medium              ;
+; Disable Register Merging Across Hierarchies                                ; Auto                ; Auto                ;
+; Resource Aware Inference For Block RAM                                     ; On                  ; On                  ;
++----------------------------------------------------------------------------+---------------------+---------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                      ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                                                        ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------------+---------+
+; display_7_seg.v                  ; yes             ; User Verilog HDL File  ; C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/display_7_seg.v       ;         ;
+; rain_module_project.v            ; yes             ; User Verilog HDL File  ; C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v ;         ;
+; LCD_Display.v                    ; yes             ; User Verilog HDL File  ; C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v         ;         ;
+; Reset_Delay.v                    ; yes             ; User Verilog HDL File  ; C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Reset_Delay.v         ;         ;
+; Print_Display_LCD.v              ; yes             ; User Verilog HDL File  ; C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Print_Display_LCD.v   ;         ;
+; Buffer_Sensor.v                  ; yes             ; User Verilog HDL File  ; C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Buffer_Sensor.v       ;         ;
+; Memoria_Mensagem.v               ; yes             ; User Verilog HDL File  ; C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Memoria_Mensagem.v    ;         ;
+; Unidade_de_Controle.v            ; yes             ; User Verilog HDL File  ; C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Unidade_de_Controle.v ;         ;
+; uart_tx.v                        ; yes             ; User Verilog HDL File  ; C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/uart_tx.v             ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 274             ;
+;                                             ;                 ;
+; Total combinational functions               ; 272             ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 146             ;
+;     -- 3 input functions                    ; 39              ;
+;     -- <=2 input functions                  ; 87              ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 216             ;
+;     -- arithmetic mode                      ; 56              ;
+;                                             ;                 ;
+; Total registers                             ; 109             ;
+;     -- Dedicated logic registers            ; 109             ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 29              ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; clk_50MHz~input ;
+; Maximum fan-out                             ; 71              ;
+; Total fan-out                               ; 1273            ;
+; Average fan-out                             ; 2.85            ;
++---------------------------------------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                               ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name         ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+---------------------+--------------+
+; |rain_module_project             ; 272 (0)             ; 109 (0)                   ; 0           ; 0            ; 0       ; 0         ; 29   ; 0            ; |rain_module_project                                                           ; rain_module_project ; work         ;
+;    |Buffer_Sensor:BS|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rain_module_project|Buffer_Sensor:BS                                          ; Buffer_Sensor       ; work         ;
+;    |Memoria_Mensagem:comb_8|     ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rain_module_project|Memoria_Mensagem:comb_8                                   ; Memoria_Mensagem    ; work         ;
+;    |Print_Display_LCD:P1|        ; 212 (0)             ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rain_module_project|Print_Display_LCD:P1                                      ; Print_Display_LCD   ; work         ;
+;       |LCD_Display:u1|           ; 185 (93)            ; 59 (59)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rain_module_project|Print_Display_LCD:P1|LCD_Display:u1                       ; LCD_Display         ; work         ;
+;          |LCD_display_string:u1| ; 92 (92)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rain_module_project|Print_Display_LCD:P1|LCD_Display:u1|LCD_display_string:u1 ; LCD_display_string  ; work         ;
+;       |Reset_Delay:r0|           ; 27 (27)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rain_module_project|Print_Display_LCD:P1|Reset_Delay:r0                       ; Reset_Delay         ; work         ;
+;    |Unidade_de_Controle:UC|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rain_module_project|Unidade_de_Controle:UC                                    ; Unidade_de_Controle ; work         ;
+;    |uart_tx:B22|                 ; 43 (43)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rain_module_project|uart_tx:B22                                               ; uart_tx             ; work         ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |rain_module_project|Print_Display_LCD:P1|LCD_Display:u1|next_command                                                                                                                                                                                                ;
++----------------------------+----------------------------+--------------------------+---------------------+---------------------+--------------------------+--------------------+---------------------------+-----------------------+-------------------------+-----------------------+
+; Name                       ; next_command.DISPLAY_CLEAR ; next_command.DISPLAY_OFF ; next_command.RESET3 ; next_command.RESET2 ; next_command.RETURN_HOME ; next_command.LINE2 ; next_command.Print_String ; next_command.MODE_SET ; next_command.DISPLAY_ON ; next_command.FUNC_SET ;
++----------------------------+----------------------------+--------------------------+---------------------+---------------------+--------------------------+--------------------+---------------------------+-----------------------+-------------------------+-----------------------+
+; next_command.FUNC_SET      ; 0                          ; 0                        ; 0                   ; 0                   ; 0                        ; 0                  ; 0                         ; 0                     ; 0                       ; 0                     ;
+; next_command.DISPLAY_ON    ; 0                          ; 0                        ; 0                   ; 0                   ; 0                        ; 0                  ; 0                         ; 0                     ; 1                       ; 1                     ;
+; next_command.MODE_SET      ; 0                          ; 0                        ; 0                   ; 0                   ; 0                        ; 0                  ; 0                         ; 1                     ; 0                       ; 1                     ;
+; next_command.Print_String  ; 0                          ; 0                        ; 0                   ; 0                   ; 0                        ; 0                  ; 1                         ; 0                     ; 0                       ; 1                     ;
+; next_command.LINE2         ; 0                          ; 0                        ; 0                   ; 0                   ; 0                        ; 1                  ; 0                         ; 0                     ; 0                       ; 1                     ;
+; next_command.RETURN_HOME   ; 0                          ; 0                        ; 0                   ; 0                   ; 1                        ; 0                  ; 0                         ; 0                     ; 0                       ; 1                     ;
+; next_command.RESET2        ; 0                          ; 0                        ; 0                   ; 1                   ; 0                        ; 0                  ; 0                         ; 0                     ; 0                       ; 1                     ;
+; next_command.RESET3        ; 0                          ; 0                        ; 1                   ; 0                   ; 0                        ; 0                  ; 0                         ; 0                     ; 0                       ; 1                     ;
+; next_command.DISPLAY_OFF   ; 0                          ; 1                        ; 0                   ; 0                   ; 0                        ; 0                  ; 0                         ; 0                     ; 0                       ; 1                     ;
+; next_command.DISPLAY_CLEAR ; 1                          ; 0                        ; 0                   ; 0                   ; 0                        ; 0                  ; 0                         ; 0                     ; 0                       ; 1                     ;
++----------------------------+----------------------------+--------------------------+---------------------+---------------------+--------------------------+--------------------+---------------------------+-----------------------+-------------------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |rain_module_project|Print_Display_LCD:P1|LCD_Display:u1|state                                                                                                                                                                         ;
++---------------------+---------------------+-------------------+--------------+--------------+------------+------------------+-------------------+-------------+--------------------+----------------+------------------+----------------+--------------+
+; Name                ; state.DISPLAY_CLEAR ; state.DISPLAY_OFF ; state.RESET3 ; state.RESET2 ; state.HOLD ; state.DROP_LCD_E ; state.RETURN_HOME ; state.LINE2 ; state.Print_String ; state.MODE_SET ; state.DISPLAY_ON ; state.FUNC_SET ; state.RESET1 ;
++---------------------+---------------------+-------------------+--------------+--------------+------------+------------------+-------------------+-------------+--------------------+----------------+------------------+----------------+--------------+
+; state.RESET1        ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0                ; 0                 ; 0           ; 0                  ; 0              ; 0                ; 0              ; 0            ;
+; state.FUNC_SET      ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0                ; 0                 ; 0           ; 0                  ; 0              ; 0                ; 1              ; 1            ;
+; state.DISPLAY_ON    ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0                ; 0                 ; 0           ; 0                  ; 0              ; 1                ; 0              ; 1            ;
+; state.MODE_SET      ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0                ; 0                 ; 0           ; 0                  ; 1              ; 0                ; 0              ; 1            ;
+; state.Print_String  ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0                ; 0                 ; 0           ; 1                  ; 0              ; 0                ; 0              ; 1            ;
+; state.LINE2         ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0                ; 0                 ; 1           ; 0                  ; 0              ; 0                ; 0              ; 1            ;
+; state.RETURN_HOME   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0                ; 1                 ; 0           ; 0                  ; 0              ; 0                ; 0              ; 1            ;
+; state.DROP_LCD_E    ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 1                ; 0                 ; 0           ; 0                  ; 0              ; 0                ; 0              ; 1            ;
+; state.HOLD          ; 0                   ; 0                 ; 0            ; 0            ; 1          ; 0                ; 0                 ; 0           ; 0                  ; 0              ; 0                ; 0              ; 1            ;
+; state.RESET2        ; 0                   ; 0                 ; 0            ; 1            ; 0          ; 0                ; 0                 ; 0           ; 0                  ; 0              ; 0                ; 0              ; 1            ;
+; state.RESET3        ; 0                   ; 0                 ; 1            ; 0            ; 0          ; 0                ; 0                 ; 0           ; 0                  ; 0              ; 0                ; 0              ; 1            ;
+; state.DISPLAY_OFF   ; 0                   ; 1                 ; 0            ; 0            ; 0          ; 0                ; 0                 ; 0           ; 0                  ; 0              ; 0                ; 0              ; 1            ;
+; state.DISPLAY_CLEAR ; 1                   ; 0                 ; 0            ; 0            ; 0          ; 0                ; 0                 ; 0           ; 0                  ; 0              ; 0                ; 0              ; 1            ;
++---------------------+---------------------+-------------------+--------------+--------------+------------+------------------+-------------------+-------------+--------------------+----------------+------------------+----------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                           ;
++----------------------------------------------------+---------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal             ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------------------+------------------------+
+; Buffer_Sensor:BS|buffer                            ; Unidade_de_Controle:UC|flag_ler ; yes                    ;
+; Unidade_de_Controle:UC|flag_ler                    ; Unidade_de_Controle:UC|Decoder0 ; yes                    ;
+; Number of user-specified and inferred latches = 2  ;                                 ;                        ;
++----------------------------------------------------+---------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                          ;
++----------------------------------------------------+----------------------------------------+
+; Register name                                      ; Reason for Removal                     ;
++----------------------------------------------------+----------------------------------------+
+; Print_Display_LCD:P1|LCD_Display:u1|LCD_RW_INT     ; Stuck at GND due to stuck port data_in ;
+; Print_Display_LCD:P1|LCD_Display:u1|next_command~2 ; Lost fanout                            ;
+; Print_Display_LCD:P1|LCD_Display:u1|next_command~3 ; Lost fanout                            ;
+; Print_Display_LCD:P1|LCD_Display:u1|next_command~4 ; Lost fanout                            ;
+; Print_Display_LCD:P1|LCD_Display:u1|next_command~5 ; Lost fanout                            ;
+; Print_Display_LCD:P1|LCD_Display:u1|state~14       ; Lost fanout                            ;
+; Print_Display_LCD:P1|LCD_Display:u1|state~15       ; Lost fanout                            ;
+; Print_Display_LCD:P1|LCD_Display:u1|state~16       ; Lost fanout                            ;
+; Print_Display_LCD:P1|LCD_Display:u1|state~17       ; Lost fanout                            ;
+; Total Number of Removed Registers = 9              ;                                        ;
++----------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 109   ;
+; Number of registers using Synchronous Clear  ; 36    ;
+; Number of registers using Synchronous Load   ; 5     ;
+; Number of registers using Asynchronous Clear ; 34    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 53    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |rain_module_project|uart_tx:B22|sample_cntr[11]                           ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |rain_module_project|uart_tx:B22|tx_shift[5]                               ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |rain_module_project|uart_tx:B22|tx_shift[8]                               ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |rain_module_project|Print_Display_LCD:P1|LCD_Display:u1|DATA_BUS_VALUE[4] ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |rain_module_project|Unidade_de_Controle:UC|Mux2                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Print_Display_LCD:P1|LCD_Display:u1 ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; HOLD           ; 0000  ; Unsigned Binary                                         ;
+; FUNC_SET       ; 0001  ; Unsigned Binary                                         ;
+; DISPLAY_ON     ; 0010  ; Unsigned Binary                                         ;
+; MODE_SET       ; 0011  ; Unsigned Binary                                         ;
+; Print_String   ; 0100  ; Unsigned Binary                                         ;
+; LINE2          ; 0101  ; Unsigned Binary                                         ;
+; RETURN_HOME    ; 0110  ; Unsigned Binary                                         ;
+; DROP_LCD_E     ; 0111  ; Unsigned Binary                                         ;
+; RESET1         ; 1000  ; Unsigned Binary                                         ;
+; RESET2         ; 1001  ; Unsigned Binary                                         ;
+; RESET3         ; 1010  ; Unsigned Binary                                         ;
+; DISPLAY_OFF    ; 1011  ; Unsigned Binary                                         ;
+; DISPLAY_CLEAR  ; 1100  ; Unsigned Binary                                         ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart_tx:B22 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; BAUD_DIVISOR   ; 5208  ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "display_7_seg:comb_9" ;
++-----------+-------+----------+-------------------+
+; Port      ; Type  ; Severity ; Details           ;
++-----------+-------+----------+-------------------+
+; inp[3..1] ; Input ; Info     ; Stuck at GND      ;
++-----------+-------+----------+-------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "uart_tx:B22"                                                                                                    ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; tx_data_ack ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Print_Display_LCD:P1"                                                                                                                       ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; var  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 29                          ;
+; cycloneiii_ff         ; 109                         ;
+;     CLR               ; 14                          ;
+;     CLR SCLR          ; 20                          ;
+;     ENA               ; 48                          ;
+;     ENA SLD           ; 5                           ;
+;     SCLR              ; 16                          ;
+;     plain             ; 6                           ;
+; cycloneiii_io_obuf    ; 8                           ;
+; cycloneiii_lcell_comb ; 275                         ;
+;     arith             ; 56                          ;
+;         2 data inputs ; 55                          ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 219                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 28                          ;
+;         3 data inputs ; 38                          ;
+;         4 data inputs ; 146                         ;
+;                       ;                             ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 4.07                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Mon Aug 01 23:02:06 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rain_module_project -c rain_module_project
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file display_7_seg.v
+    Info (12023): Found entity 1: display_7_seg File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/display_7_seg.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file divisor_frequencia.v
+    Info (12023): Found entity 1: Divisor_Frequencia File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Divisor_Frequencia.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file rain_module_project.v
+    Info (12023): Found entity 1: rain_module_project File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 1
+Warning (10238): Verilog Module Declaration warning at LCD_Display.v(304): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "LCD_display_string" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 304
+Info (12021): Found 2 design units, including 2 entities, in source file lcd_display.v
+    Info (12023): Found entity 1: LCD_Display File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 40
+    Info (12023): Found entity 2: LCD_display_string File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 300
+Info (12021): Found 1 design units, including 1 entities, in source file reset_delay.v
+    Info (12023): Found entity 1: Reset_Delay File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Reset_Delay.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at Print_Display_LCD.v(6): "var" is SystemVerilog-2005 keyword File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Print_Display_LCD.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file print_display_lcd.v
+    Info (12023): Found entity 1: Print_Display_LCD File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Print_Display_LCD.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file buffer_sensor.v
+    Info (12023): Found entity 1: Buffer_Sensor File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Buffer_Sensor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file memoria_mensagem.v
+    Info (12023): Found entity 1: Memoria_Mensagem File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Memoria_Mensagem.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file modulo_bluetooth.v
+    Info (12023): Found entity 1: Modulo_Bluetooth File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Modulo_Bluetooth.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file uart_baudrate_generator.v
+    Info (12023): Found entity 1: UART_BaudRate_generator File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/UART_BaudRate_generator.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file uart_rs232_tx.v
+    Info (12023): Found entity 1: UART_rs232_tx File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/UART_rs232_tx.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file unidade_de_controle.v
+    Info (12023): Found entity 1: Unidade_de_Controle File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Unidade_de_Controle.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file uart_tx.v
+    Info (12023): Found entity 1: uart_tx File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/uart_tx.v Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at rain_module_project.v(106): instance has no name File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 106
+Critical Warning (10846): Verilog HDL Instantiation warning at rain_module_project.v(165): instance has no name File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 165
+Info (12127): Elaborating entity "rain_module_project" for the top level hierarchy
+Info (12128): Elaborating entity "Buffer_Sensor" for hierarchy "Buffer_Sensor:BS" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 62
+Warning (10235): Verilog HDL Always Construct warning at Buffer_Sensor.v(9): variable "entrada" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Buffer_Sensor.v Line: 9
+Warning (10240): Verilog HDL Always Construct warning at Buffer_Sensor.v(6): inferring latch(es) for variable "buffer", which holds its previous value in one or more paths through the always construct File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Buffer_Sensor.v Line: 6
+Info (10041): Inferred latch for "buffer" at Buffer_Sensor.v(8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Buffer_Sensor.v Line: 8
+Info (12128): Elaborating entity "Unidade_de_Controle" for hierarchy "Unidade_de_Controle:UC" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 67
+Warning (10240): Verilog HDL Always Construct warning at Unidade_de_Controle.v(12): inferring latch(es) for variable "flag_ler", which holds its previous value in one or more paths through the always construct File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Unidade_de_Controle.v Line: 12
+Info (10041): Inferred latch for "flag_ler" at Unidade_de_Controle.v(12) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Unidade_de_Controle.v Line: 12
+Info (12128): Elaborating entity "Memoria_Mensagem" for hierarchy "Memoria_Mensagem:comb_8" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 106
+Info (12128): Elaborating entity "Print_Display_LCD" for hierarchy "Print_Display_LCD:P1" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 147
+Warning (10036): Verilog HDL or VHDL warning at Print_Display_LCD.v(19): object "RST" assigned a value but never read File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Print_Display_LCD.v Line: 19
+Info (12128): Elaborating entity "Reset_Delay" for hierarchy "Print_Display_LCD:P1|Reset_Delay:r0" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Print_Display_LCD.v Line: 24
+Info (12128): Elaborating entity "LCD_Display" for hierarchy "Print_Display_LCD:P1|LCD_Display:u1" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Print_Display_LCD.v Line: 132
+Info (12128): Elaborating entity "LCD_display_string" for hierarchy "Print_Display_LCD:P1|LCD_Display:u1|LCD_display_string:u1" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 114
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(348): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 348
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(349): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 349
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(350): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 350
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(351): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 351
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(352): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 352
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(353): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 353
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(354): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 354
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(355): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 355
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(356): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 356
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(357): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 357
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(358): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 358
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(359): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 359
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(360): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 360
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(361): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 361
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(362): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 362
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(363): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 363
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(367): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 367
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(368): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 368
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(369): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 369
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(370): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 370
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(371): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 371
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(372): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 372
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(373): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 373
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(374): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 374
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(375): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 375
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(376): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 376
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(377): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 377
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(378): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 378
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(379): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 379
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(380): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 380
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(381): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 381
+Warning (10230): Verilog HDL assignment warning at LCD_Display.v(382): truncated value with size 12 to match size of target (8) File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 382
+Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:B22" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 159
+Info (12128): Elaborating entity "display_7_seg" for hierarchy "display_7_seg:comb_9" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 165
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch Unidade_de_Controle:UC|flag_ler has unsafe behavior File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/Unidade_de_Controle.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sinais_da_entrada[2] File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 11
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "Print_Display_LCD:P1|LCD_Display:u1|DATA_BUS[0]~synth" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 51
+    Warning (13010): Node "Print_Display_LCD:P1|LCD_Display:u1|DATA_BUS[1]~synth" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 51
+    Warning (13010): Node "Print_Display_LCD:P1|LCD_Display:u1|DATA_BUS[2]~synth" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 51
+    Warning (13010): Node "Print_Display_LCD:P1|LCD_Display:u1|DATA_BUS[3]~synth" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 51
+    Warning (13010): Node "Print_Display_LCD:P1|LCD_Display:u1|DATA_BUS[4]~synth" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 51
+    Warning (13010): Node "Print_Display_LCD:P1|LCD_Display:u1|DATA_BUS[5]~synth" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 51
+    Warning (13010): Node "Print_Display_LCD:P1|LCD_Display:u1|DATA_BUS[6]~synth" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 51
+    Warning (13010): Node "Print_Display_LCD:P1|LCD_Display:u1|DATA_BUS[7]~synth" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/LCD_Display.v Line: 51
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "saida[0]" is stuck at VCC File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 6
+    Warning (13410): Pin "saida[4]" is stuck at GND File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 6
+    Warning (13410): Pin "saida[5]" is stuck at GND File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 6
+    Warning (13410): Pin "LCD_ON" is stuck at VCC File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 20
+    Warning (13410): Pin "LCD_BLON" is stuck at VCC File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 21
+    Warning (13410): Pin "LCD_RW" is stuck at GND File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 22
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/output_files/rain_module_project.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ch_1" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 4
+    Warning (15610): No output dependent on input pin "data_valid" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 5
+    Warning (15610): No output dependent on input pin "ch_reset" File: C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/rain_module_project.v Line: 9
+Info (21057): Implemented 305 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 13 output pins
+    Info (21060): Implemented 8 bidirectional pins
+    Info (21061): Implemented 276 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 64 warnings
+    Info: Peak virtual memory: 4753 megabytes
+    Info: Processing ended: Mon Aug 01 23:02:35 2022
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:44
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/gusta/Desktop/UNIFESP/Comunicação Digital - LAB/Projeto/Atual/rain_module_project_28_7_AULA_restored/output_files/rain_module_project.map.smsg.
+
+
