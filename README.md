@@ -102,7 +102,7 @@ Baseado na configuração das chaves mencionado em Bits de Controle, a Unidade d
 
 # Palavras Chave
 
-Verilog; FPGA; Quartus Prime; Detector de Chuva; HDL; rain detector; projeto acadêmico; lógica digital; simulação digital; eletrônica digital; sensores; sistemas embarcados; hardware description language; engenharia elétrica; DE0-Nano;;;;;
+Verilog; FPGA; Quartus Prime; Detector de Chuva; HDL; rain detector; projeto acadêmico; lógica digital; simulação digital; eletrônica digital; sensores; sistemas embarcados; hardware description language; engenharia elétrica; DE0-Nano;;;;;;
 
 
 
